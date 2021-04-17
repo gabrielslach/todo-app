@@ -10,7 +10,8 @@ module.exports = {
         appBarBlue: '#1D84EF',
         btnBlue: '#1871CD',
         btnHovBlue: '#075AB0',
-        groupGray: '#E6EEF4'
+        groupGray: '#E6EEF4',
+        statusGray: '#858DA8'
       },
     },
   },

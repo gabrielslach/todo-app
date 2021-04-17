@@ -11,7 +11,9 @@ function App() {
         <button className='py-2 px-3 rounded bg-btnBlue hover:bg-btnHovBlue text-white font-medium text-sm'>Add Task</button>
       </div>
       {/* App Body */}
-      <div className='p-7'>
+      <div className='p-7 flex flex-row gap-10'>
+        <GroupPaper/>
+        <GroupPaper/>
         <GroupPaper/>
       </div>
     </div>

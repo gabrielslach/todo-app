@@ -1,6 +1,7 @@
 import React from 'react';
 
 import GroupPaper from './components/GroupPaper';
+import Dialog from './components/Dialog';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <GroupPaper/>
         <GroupPaper/>
       </div>
+      {/* Dialog */}
+      <Dialog/>
     </div>
   );
 }

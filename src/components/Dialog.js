@@ -9,9 +9,10 @@ function MyDialog(props) {
     handleCancel = ()=>{},
     title = '',
     description = '',
-    children = null
+    children = null,
+    disabled = false
    } = props;
-
+   
   return (
     <Dialog open={isOpen} onClose={handleClose} className="fixed z-10 inset-0 overflow-y-auto flex items-center justify-center">
       <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
@@ -24,8 +25,23 @@ function MyDialog(props) {
         {children}
 
         <div className='mt-6 float-right flex gap-1'>
-          <button onClick={handleCancel} className='px-3'>Cancel</button>
-          <button onClick={handleConfirm} className='py-1 px-3 rounded-md bg-blue-600 font-normal text-white' >Confirm</button>
+          <button 
+            onClick={handleCancel} 
+            className={`px-3 ${disabled && 'cursor-not-allowed'}`} 
+            disabled={disabled} 
+            >
+              Cancel
+            </button>
+          <button 
+            onClick={handleConfirm} 
+            className= {`py-1 px-3 rounded-md text-white 
+              ${!disabled && 'bg-blue-600 font-normal'} 
+              ${disabled && 'bg-gray-400 cursor-not-allowed'}
+              `} 
+            disabled={disabled} 
+            >
+              {disabled ? 'Loading...': 'Confirm'}
+            </button>
         </div>
       </div>
     </Dialog>

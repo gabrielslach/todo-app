@@ -15,8 +15,8 @@ function Task(props) {
             {/* Categories */}
             <div className='flex flex-row flex-wrap mt-2 mb-1'>
                 {categories.map(item=> (
-                    <div className={`flex-initial bg-${item.color}-100 px-1 mb-1 mr-2`}>
-                        <p className={`text-${item.color}-500 font-bold text-sm`}>{item.label}</p>
+                    <div className={`flex-initial bg-${item.colorVariant.color}-${item.colorVariant.level} px-1 mb-1 mr-2`} key={`${item.label}-cat`}>
+                        <p className={`text-${item.colorVariant.color}-700 font-bold text-sm`}>{item.label}</p>
                     </div>
                 ))
                 }

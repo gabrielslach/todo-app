@@ -4,7 +4,7 @@ import axios from "axios";
 let WEB_SERVER_URL;
 if (
   window.location.protocol === "https:" ||
-  window.location.hostname === "bingo.gabrielslach.me"
+  window.location.hostname === "todo.gabrielslach.me"
 ) {
     WEB_SERVER_URL = window.location.origin;
   }

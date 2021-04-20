@@ -90,8 +90,9 @@ export default function useTasks(vars) { // You could use this var to set someth
 
   function startTimeout() {
     timeOutVar.current = setTimeout(function () {
-    console.log("Server Timeout");
-    }, 120000);
+    alert("Server Timeout");
+    setIsLoading(false);
+    }, 30000);
   }
 
   function stopTimeout() {
@@ -146,7 +147,6 @@ export default function useTasks(vars) { // You could use this var to set someth
     var dataparam = {};
     let onSuccess = () => {};
     setIsLoading(true);
-    startTimeout();
     switch (req) {
       case "get":
         api += "get-tasks";
@@ -188,9 +188,11 @@ export default function useTasks(vars) { // You could use this var to set someth
               setDoingTasks(filterFx(filterField, filterTxt));
               setDoneTasks(filterFx(filterField, filterTxt));
             }
+            setIsLoading(false);
             return;
       default:
     }
+    startTimeout();
     if (req !== "" || typeof req !== "undefined") makePostRequest(req, api, dataparam, null, onSuccess);
   };
 
